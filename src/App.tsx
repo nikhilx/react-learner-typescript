@@ -42,6 +42,20 @@ const App: React.FC = () => {
     console.log(headers);
   };
 
+  const getTableHeaders2 = (people: People[]) => {
+    const headers = [];
+    for (const { email, gender, name, location, dob } of people) {
+      headers.push({
+        email: email,
+        gender: gender,
+        name: `${name.first} ${name.last}`,
+        city: location.city,
+        age: dob.age,
+      });
+    }
+    console.log(headers);
+  };
+
   return <div className="App">This is an app</div>;
 };
 
